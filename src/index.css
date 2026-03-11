@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  
+  body {
+    cursor: none;
+  }
+}
+
+@layer components {
+  /* ── Custom cursor ── */
+  #cursor {
+    @apply w-2.5 h-2.5 bg-accent rounded-full fixed top-0 left-0 pointer-events-none z-[9999];
+    transition: transform .15s ease, width .2s, height .2s;
+    transform: translate(-50%,-50%);
+  }
+  #cursor.hover {
+    @apply w-9 h-9 bg-transparent border-[1.5px] border-accent;
+  }
+}
+
+@layer utilities {
+  .serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
